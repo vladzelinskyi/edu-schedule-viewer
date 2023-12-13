@@ -1,0 +1,63 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks">
+
+    <Storyboard x:Key="ButtonBackgroundAnimationMouseEnter">
+        <ColorAnimationUsingKeyFrames Duration="0:0:0.1"
+                                      Storyboard.TargetProperty="Background.Color">
+            <ColorAnimationUsingKeyFrames.KeyFrames>
+                <LinearColorKeyFrame Value="#7F7F7F" KeyTime="0:0:0.1"/>
+            </ColorAnimationUsingKeyFrames.KeyFrames>
+        </ColorAnimationUsingKeyFrames>
+    </Storyboard>
+
+    <Storyboard x:Key="ButtonBackgroundAnimationMouseLeave">
+        <ColorAnimationUsingKeyFrames Duration="0:0:0.1"
+                                  Storyboard.TargetProperty="Background.Color">
+            <ColorAnimationUsingKeyFrames.KeyFrames>
+                <LinearColorKeyFrame Value="Transparent" KeyTime="0:0:0.1"/>
+            </ColorAnimationUsingKeyFrames.KeyFrames>
+        </ColorAnimationUsingKeyFrames>
+    </Storyboard>
+
+    <Storyboard x:Key="ForegroundToWhite">
+        <ColorAnimationUsingKeyFrames Duration="0:0:0.1"
+                                      Storyboard.TargetProperty="Foreground.Color">
+            <ColorAnimationUsingKeyFrames.KeyFrames>
+                <LinearColorKeyFrame Value="#FFFFFF" KeyTime="0:0:0.1"/>
+            </ColorAnimationUsingKeyFrames.KeyFrames>
+        </ColorAnimationUsingKeyFrames>
+    </Storyboard>
+    <Storyboard x:Key="ForegroundToDefault">
+        <ColorAnimationUsingKeyFrames Duration="0:0:0.1"
+                                  Storyboard.TargetProperty="Foreground.Color">
+            <ColorAnimationUsingKeyFrames.KeyFrames>
+                <LinearColorKeyFrame Value="#2F2F2F" KeyTime="0:0:0.1"/>
+            </ColorAnimationUsingKeyFrames.KeyFrames>
+        </ColorAnimationUsingKeyFrames>
+    </Storyboard>
+
+    <Style x:Key="IconButton" TargetType="Button">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Padding="4" Background="{TemplateBinding Background}" CornerRadius="10">
+                        <Icon:PackIconMaterial Kind="{Binding Tag, RelativeSource={RelativeSource FindAncestor, AncestorType=Button}}" Width="24" Height="24"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <EventTrigger RoutedEvent="MouseEnter">
+                <BeginStoryboard Storyboard="{StaticResource ButtonBackgroundAnimationMouseEnter}"/>
+                <BeginStoryboard Storyboard="{StaticResource ForegroundToWhite}"/>
+            </EventTrigger>
+            <EventTrigger RoutedEvent="MouseLeave">
+                <BeginStoryboard Storyboard="{StaticResource ButtonBackgroundAnimationMouseLeave}"/>
+                <BeginStoryboard Storyboard="{StaticResource ForegroundToDefault}"/>
+            </EventTrigger>
+        </Style.Triggers>
+    </Style>
+</ResourceDictionary>
