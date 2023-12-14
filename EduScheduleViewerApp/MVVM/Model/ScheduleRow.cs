@@ -1,10 +1,10 @@
 ﻿namespace EduScheduleViewerApp.MVVM.Model
 {
-    class ScheduleRow
+    public class ScheduleRow
     {
-        string Title { get; set; }
-        string StartTime { get; set; }
-        string EndTime { get; set; }
+        public string Title { get; set; }
+        public string StartTime { get; set; }
+        public string EndTime { get; set; }
 
         public ScheduleRow( string title, string startTime, string endTime)
         {
