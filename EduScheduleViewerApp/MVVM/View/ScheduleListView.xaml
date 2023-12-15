@@ -16,15 +16,20 @@
         </Grid.ColumnDefinitions>
 
         <StackPanel VerticalAlignment="Center">
-            <ListView ItemsSource="{Binding Schedule}">
-                <ListView.View>
-                    <GridView>
-                        <GridViewColumn DisplayMemberBinding="{Binding Title}"/>
-                        <GridViewColumn DisplayMemberBinding="{Binding StartTime}"/>
-                        <GridViewColumn DisplayMemberBinding="{Binding EndTime}"/>
-                    </GridView>
-                </ListView.View>
-            </ListView>
+            <DataGrid ItemsSource="{Binding Schedule}"
+                      Style="{StaticResource ScheduleListStyle}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding Title}"
+                                        Width="*"
+                                        CellStyle="{StaticResource ScheduleListCellStyle}"/>
+                    <DataGridTextColumn Binding="{Binding StartTime}"
+                                        MinWidth="40"
+                                        CellStyle="{StaticResource ScheduleListCellStyle}"/>
+                    <DataGridTextColumn Binding="{Binding EndTime}"
+                                        MinWidth="40"
+                                        CellStyle="{StaticResource ScheduleListCellStyle}"/>
+                </DataGrid.Columns>
+            </DataGrid>
         </StackPanel>
     </Grid>
 </UserControl>
