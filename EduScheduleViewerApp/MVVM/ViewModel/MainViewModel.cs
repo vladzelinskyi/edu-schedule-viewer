@@ -5,6 +5,7 @@ namespace EduScheduleViewerApp.MVVM.ViewModel
     class MainViewModel : ObservableObject
     {
         public ScheduleListViewModel ScheduleListVM { get; set; }
+        public SettingsViewModel SettingsVM { get; set; }
 
         private object _currentView;
 
@@ -21,8 +22,10 @@ namespace EduScheduleViewerApp.MVVM.ViewModel
         public MainViewModel()
         {
             ScheduleListVM = new ScheduleListViewModel();
+            SettingsVM = new SettingsViewModel();
 
-            CurrentView = ScheduleListVM;
+
+            CurrentView = SettingsVM;
         }
 
     }
