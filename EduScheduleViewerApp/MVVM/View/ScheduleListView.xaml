@@ -5,7 +5,9 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:viewModel="clr-namespace:EduScheduleViewerApp.MVVM.ViewModel"
              mc:Ignorable="d" 
-             d:DesignHeight="640" d:DesignWidth="1100">
+             d:DesignHeight="640" d:DesignWidth="1100"
+             Background="#fff"
+             Foreground="#2F2F2F">
     <UserControl.DataContext>
         <viewModel:ScheduleListViewModel/>
     </UserControl.DataContext>
@@ -31,5 +33,41 @@
                 </DataGrid.Columns>
             </DataGrid>
         </StackPanel>
+
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <StackPanel VerticalAlignment="Center"
+                        HorizontalAlignment="Center">
+                <TextBlock Text="Зараз"
+                           Style="{StaticResource TimeSubtitleStyle}"/>
+                <StackPanel Orientation="Horizontal"
+                            HorizontalAlignment="Center">
+                    <TextBlock Text="09" Style="{StaticResource TimeTextBoxStyle}"/>
+                    <TextBlock Text=":" Style="{StaticResource TimeTextBoxStyle}"
+                               Margin="30 0"/>
+                    <TextBlock Text="37" Style="{StaticResource TimeTextBoxStyle}"/>
+                </StackPanel>
+                <TextBlock Text="17.12.2023"
+                           Style="{StaticResource TimeSubtitleStyle}"/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="1" VerticalAlignment="Center"
+            HorizontalAlignment="Center">
+                <TextBlock Text="До початку"
+               Style="{StaticResource TimeSubtitleStyle}"/>
+                <StackPanel Orientation="Horizontal"
+                HorizontalAlignment="Center">
+                    <TextBlock Text="09" Style="{StaticResource TimeTextBoxStyle}"/>
+                    <TextBlock Text=":" Style="{StaticResource TimeTextBoxStyle}"
+                   Margin="30 0"/>
+                    <TextBlock Text="15" Style="{StaticResource TimeTextBoxStyle}"/>
+                </StackPanel>
+            </StackPanel>
+
+        </Grid>
     </Grid>
 </UserControl>

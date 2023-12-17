@@ -10,6 +10,7 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="/Theme/MainTopNavTheme.xaml"/>
                 <ResourceDictionary Source="/Theme/ScheduleListTheme.xaml"/>
+                <ResourceDictionary Source="/Theme/TimerTheme.xaml"/>
             </ResourceDictionary.MergedDictionaries>
 
             <DataTemplate DataType="{x:Type viewModel:ScheduleListViewModel}">
