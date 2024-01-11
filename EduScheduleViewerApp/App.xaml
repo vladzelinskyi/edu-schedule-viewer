@@ -12,6 +12,7 @@
                 <ResourceDictionary Source="/Theme/ScheduleListTheme.xaml"/>
                 <ResourceDictionary Source="/Theme/TimerTheme.xaml"/>
                 <ResourceDictionary Source="/Theme/SettingsTheme.xaml"/>
+                <ResourceDictionary Source="/Theme/ScheduleSettingsTabControlTheme.xaml"/>
             </ResourceDictionary.MergedDictionaries>
 
             <DataTemplate DataType="{x:Type viewModel:ScheduleListViewModel}">

@@ -22,5 +22,7 @@
                          IsChecked="True"/>
             <RadioButton Content="Звук" Style="{StaticResource SettingsTabButtonStyle}"/>
         </StackPanel>
+
+        <UserControl Grid.Column="1" Content="{Binding CurrentSettingsTab}"/>
     </Grid>
 </UserControl>
