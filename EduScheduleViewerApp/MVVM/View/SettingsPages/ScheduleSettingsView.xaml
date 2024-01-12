@@ -13,10 +13,10 @@
     
     <StackPanel>
         <TabControl Style="{StaticResource ScheduleSettingsTabControl}">
-            <TabItem Header="Розклад 1">
+            <TabItem Header="Розклад 1" Style="{StaticResource ScheduleSettingsTabItem}">
                 <TextBlock Text="text 1"/>
             </TabItem>
-            <TabItem Header="Розклад 2">
+            <TabItem Header="Розклад 2" Style="{StaticResource ScheduleSettingsTabItem}">
                 <TextBlock Text="text 2"/>
             </TabItem>
         </TabControl>

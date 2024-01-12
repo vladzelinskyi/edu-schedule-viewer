@@ -23,6 +23,6 @@
             <RadioButton Content="Звук" Style="{StaticResource SettingsTabButtonStyle}"/>
         </StackPanel>
 
-        <UserControl Grid.Column="1" Content="{Binding CurrentSettingsTab}"/>
+        <UserControl Grid.Column="1" Content="{Binding CurrentSettingsTab}" Margin="0 16 16 16" />
     </Grid>
 </UserControl>

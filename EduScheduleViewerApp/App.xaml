@@ -3,7 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:EduScheduleViewerApp"
              xmlns:viewModel="clr-namespace:EduScheduleViewerApp.MVVM.ViewModel"
+             xmlns:settingsPagesVM="clr-namespace:EduScheduleViewerApp.MVVM.ViewModel.SettingsPagesViewModel"
              xmlns:view="clr-namespace:EduScheduleViewerApp.MVVM.View"
+             xmlns:settingsView="clr-namespace:EduScheduleViewerApp.MVVM.View.SettingsPages"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>
@@ -18,9 +20,13 @@
             <DataTemplate DataType="{x:Type viewModel:ScheduleListViewModel}">
                 <view:ScheduleListView />
             </DataTemplate>
-            
+
             <DataTemplate DataType="{x:Type viewModel:SettingsViewModel}">
                 <view:SettingsView />
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type settingsPagesVM:ScheduleSettingsViewModel}">
+                <settingsView:ScheduleSettingsView />
             </DataTemplate>
             
         </ResourceDictionary>
